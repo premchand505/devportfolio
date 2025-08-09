@@ -5,25 +5,25 @@ const projectData = [
   {
     title: 'Fitness App',
     description: 'A fitness tracker with workout plans, diet logging, and progress visualization.',
-    image: 'public/devimage.jpg',
+    image: 'devimage.jpg',
     link: 'https://yourapp.com/fitness',
   },
   {
     title: 'Haptic Video Generator',
     description: 'Automatically generates synced haptic feedback for videos using AI.',
-    image: 'public/project1.jpeg',
+    image: 'project1.jpeg',
     link: 'https://yourapp.com/haptics',
   },
   {
     title: 'Traffic Analysis',
     description: 'A real-time traffic analytics dashboard using live map and AI predictions.',
-    image: 'public/project1.jpeg',
+    image: 'project1.jpeg',
     link: 'https://yourapp.com/traffic',
   },
   {
     title: 'SDN DDoS Detection',
     description: 'Detects and mitigates DDoS attacks on software-defined networks in real-time.',
-    image: 'public/devimage.jpg',
+    image: 'devimage.jpg',
     link: 'https://yourapp.com/ddos',
   },
 ];

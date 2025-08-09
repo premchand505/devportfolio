@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${shrink ? 'shrink' : ''}`}>
       <div className="navbar-logo">
-        <img src="public\react.svg" alt="Logo" />
+        <img src="react.svg" alt="Logo" />
       </div>
 
       <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
