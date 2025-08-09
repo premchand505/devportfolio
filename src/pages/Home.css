@@ -1,0 +1,371 @@
+.home-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw; /* Full viewport width */
+  position: relative;
+  z-index: 1; /* Ensure above Waves background (z-index: 0 in App.css) */
+  overflow: hidden;
+  background: transparent; /* Allow Waves background to show through */
+  
+}
+
+
+.home-content {
+  display: flex;
+  width: 100%;
+  min-height: 100vh; /* Ensure content spans viewport height */
+  margin-top: 40px;
+}
+
+.left-section {
+  margin-left: 200px;
+  margin-top: 80px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 32px;
+  background-color: inherit; /* Inherit transparent background */
+
+}
+@keyframes animate__wobble {
+  0%   { transform: translateX(0%) rotate(0deg); }
+  15%  { transform: translateX(-5%) rotate(-5deg); }
+  30%  { transform: translateX(4%) rotate(3deg); }
+  45%  { transform: translateX(-3%) rotate(-3deg); }
+  60%  { transform: translateX(2%) rotate(2deg); }
+  75%  { transform: translateX(-1%) rotate(-1deg); }
+  100% { transform: translateX(0%) rotate(0deg); }
+}
+
+.text-section h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3rem;
+  color: #000000;
+  margin-left: 32px;
+  margin-bottom: 16px;
+  z-index: 1; /* Ensure text is above background */
+  animation: animate__wobble 4s ease-in-out infinite;
+
+}
+
+
+.text-section h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.3rem;
+  color: #000000;
+  margin-bottom: 16px;
+  margin-left: 32px;
+  z-index: 1;
+  animation: animate__wobble 4s ease-in-out infinite;
+}
+
+.text-section p {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.5rem;
+  color: #000000;
+  line-height: 1.6;
+  font-weight: 300;
+  z-index: 1;
+}
+
+.resume-button-container {
+  display: flex;
+  justify-content: center;
+  justify-content: flex-start;
+}
+
+/* Actual pill-shaped button */
+.resume-button {
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  min-width: 140px;
+}
+
+.resume-button::before {
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease;
+  width: 92%;
+  pointer-events: none;
+}
+
+.resume-button:hover {
+  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
+              rgba(0, 0, 0, 0.1) 0 3px 5px,
+              rgba(0, 0, 0, 0.1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .resume-button {
+    padding: 16px 48px;
+  }
+}
+
+
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit; /* Transparent to show Waves */
+  overflow: hidden;
+}
+.linksbar{
+  margin-left: 48px;
+}
+
+.profile-photo {
+  max-width: 60%; /* Limit image size */
+  max-height: 90%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Ensure image is above background */
+  margin-left: 16px;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .home-content {
+    flex-direction: column;
+  }
+
+  .left-section {
+    margin-left: 0;
+    margin-top: 100px;
+    padding: 20px;
+  }
+
+  .right-section {
+    padding: 20px;
+    min-height: 300px;
+  }
+
+  .profile-photo {
+    max-width: 80%; /* Larger on mobile */
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+ 
+}
+
+.rainbow-strip {
+  position: fixed;
+  width: 1115px;
+  height: 100px;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.5;
+  border-radius: 50px;
+  left:200px
+}
+
+.rainbow {
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  top: -75px;
+  transform: rotate(10deg);
+  transform-origin: top right;
+  animation-name: slide;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Apply random box shadows using :nth-child selectors */
+.rainbow-strip .rainbow:nth-child(6n+1) {
+  box-shadow:
+    -130px 0 80px 40px white,
+    -50px 0 50px 25px rgb(232, 121, 249),
+    0     0 50px 25px rgb(96, 165, 250),
+    50px  0 50px 25px rgb(94, 234, 212),
+    130px 0 80px 40px white;
+}
+
+.rainbow-strip .rainbow:nth-child(6n+2) {
+  box-shadow:
+    -130px 0 80px 40px white,
+    -50px 0 50px 25px rgb(232, 121, 249),
+    0     0 50px 25px rgb(94, 234, 212),
+    50px  0 50px 25px rgb(96, 165, 250),
+    130px 0 80px 40px white;
+}
+
+.rainbow-strip .rainbow:nth-child(6n+3) {
+  box-shadow:
+    -130px 0 80px 40px white,
+    -50px 0 50px 25px rgb(94, 234, 212),
+    0     0 50px 25px rgb(232, 121, 249),
+    50px  0 50px 25px rgb(96, 165, 250),
+    130px 0 80px 40px white;
+}
+
+.rainbow-strip .rainbow:nth-child(6n+4) {
+  box-shadow:
+    -130px 0 80px 40px white,
+    -50px 0 50px 25px rgb(94, 234, 212),
+    0     0 50px 25px rgb(96, 165, 250),
+    50px  0 50px 25px rgb(232, 121, 249),
+    130px 0 80px 40px white;
+}
+
+.rainbow-strip .rainbow:nth-child(6n+5) {
+  box-shadow:
+    -130px 0 80px 40px white,
+    -50px 0 50px 25px rgb(96, 165, 250),
+    0     0 50px 25px rgb(94, 234, 212),
+    50px  0 50px 25px rgb(232, 121, 249),
+    130px 0 80px 40px white;
+}
+
+.rainbow-strip .rainbow:nth-child(6n) {
+  box-shadow:
+    -130px 0 80px 40px white,
+    -50px 0 50px 25px rgb(96, 165, 250),
+    0     0 50px 25px rgb(232, 121, 249),
+    50px  0 50px 25px rgb(94, 234, 212),
+    130px 0 80px 40px white;
+}
+
+@keyframes slide {
+  from {
+    right: -25vw;
+  }
+  to {
+    right: 125vw;
+  }
+}
+              
+
+
+
+
+
+
+
+
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+  display: flex;
+  justify-content: space-between; /* Distribute lines evenly */
+}
+
+.line {
+  position: relative;
+  width: 2px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0)  0%, #ffffff 75%, #ffffff 100%);
+  animation: drop 5s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+/* Different colors for each line's pseudo-element */
+.line:nth-child(1)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0)  0%, #FF4500 75%, #FF4500 100%);
+  animation-delay: 0.5s;
+}
+
+.line:nth-child(2)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0)  0%, #32CD32 75%, #32CD32 100%);
+  animation-delay: 1s;
+}
+
+.line:nth-child(3)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #1E90FF 75%, #1E90FF 100%);
+  animation-delay: 2.5;
+}
+
+.line:nth-child(4)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FFD700 75%, #FFD700 100%);
+  animation-delay:3.5s;
+}
+
+.line:nth-child(5)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #8A2BE2 75%, #8A2BE2 100%);
+  animation-delay: 2.5s;
+}
+
+.line:nth-child(6)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #20B2AA 75%, #20B2AA 100%);
+  animation-delay: 5s;
+}
+
+.line:nth-child(7)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #DC143C 75%, #DC143C 100%);
+  animation-delay: 3.5s;
+}
+
+.line:nth-child(8)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #00FA9A 75%, #00FA9A 100%);
+  animation-delay: 4s;
+}
+
+.line:nth-child(9)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FF1493 75%, #FF1493 100%);
+  animation-delay: 4.5s;
+}
+
+.line:nth-child(10)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #00BFFF 75%, #00BFFF 100%);
+  animation-delay: 5s;
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}

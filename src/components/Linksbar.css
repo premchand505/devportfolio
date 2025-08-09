@@ -1,0 +1,30 @@
+.linksbar-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px 0;
+    position: relative;
+  }
+  
+  .social-icon {
+    font-size: 2rem;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #007bff;
+    transform: translateY(-3px);
+  }
+  
+  @media (max-width: 768px) {
+    .linksbar-container {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+  
+    .social-icon {
+      font-size: 1.8rem;
+    }
+  }
