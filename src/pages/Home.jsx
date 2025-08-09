@@ -55,7 +55,7 @@ const Home = () => {
 
             <div className="right-section">
 
-              <img src="/src/assets/devimage.jpg" alt="Your Profile" className="profile-photo" />
+              <img src="public\devimage.jpg" alt="Your Profile" className="profile-photo" />
               <div className="text-section">
                 <h2>Connect With Me</h2>
                 <div className='linksbar'><Linksbar /></div>
